@@ -5,8 +5,11 @@
   Le source est volontairement ici pour être compilé facilement en ligne de commande.  
   Voir [Cette page](http://www.movable-type.co.uk/scripts/latlong.html) pour la formule de calcul de la distance de "haversine"
 * Compiler le code source de la servlet,
-  pour cela ajouter "servlet-api.jar" dans le classpath.
+  pour cela ajouter "servlet-api.jar" dans le classpath
   Ce fichier est disponible dans le répertoire "lib" de Tomcat.
+
+  javac -cp /home/m2eserv/thitouane.helle.etu/Desktop/apache-tomcat-8.5.82/lib/servlet-api.jar MyServlet.java 
+
 * Lancer Tomcat et ouvrir l'URL suivante dans un navigateur http://localhost:8080/exo101/
 * Compléter l'URL en fonction du code de la servlet
 * Saisir les coordonnées de deux points
@@ -16,3 +19,8 @@ En guise de contrôle, saisir les coordonnées suivantes :
 * Marseille : 43.29639, 5.37
 
 La distance retournée doit être : 834,7 km
+
+ACOS( 
+  SIN( RADIANS(B2) ) * SIN( RADIANS(B3) ) +
+  COS( RADIANS(B2) ) * COS( RADIANS(B3) ) * 
+  COS( RADIANS(C2-C3) ) ) * 6371
